@@ -1,0 +1,38 @@
+<h1 mat-dialog-title color="primary">{{ dialogData.action }} Category</h1>
+<div mat-dialog-content>
+  <div [ngClass]="dialogData.action">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input
+        matInput
+        required
+        [(ngModel)]="dialogData.data.name"
+        #categoryName="ngModel"
+      />
+    </mat-form-field>
+    <mat-error
+      *ngIf="
+        categoryName.invalid &&
+        (categoryName.dirty || categoryName.touched) &&
+        dialogData.action != 'Delete'
+      "
+    >
+      Category Name is <strong>required</strong>
+    </mat-error>
+  </div>
+  <p *ngIf="dialogData.action == 'Delete'">
+    Do you want to delete <strong>{{ dialogData.data.name }}</strong> from
+    Category List ?
+  </p>
+</div>
+<div mat-dialog-actions>
+  <button
+    mat-button
+    color="{{ dialogData.action == 'Delete' ? 'warn' : 'primary' }}"
+    [mat-dialog-close]="dialogData"
+    [disabled]="categoryName.invalid && dialogData.action != 'Delete'"
+  >
+    {{ dialogData.action }}
+  </button>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+</div>

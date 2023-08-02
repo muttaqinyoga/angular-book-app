@@ -1,0 +1,105 @@
+<mat-toolbar>
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon> menu </mat-icon>
+  </button>
+  <span>ANGULAR BOOK APP</span>
+  <span class="toolbar-item-spacer"></span>
+
+  <button
+    mat-icon-button
+    matTooltip="My Account"
+    [matMenuTriggerFor]="userAccountMenu"
+  >
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <mat-menu
+    #userAccountMenu
+    [overlapTrigger]="false"
+    yPosition="below"
+    mode="side"
+  >
+    <button mat-menu-item routerLink="#">
+      <mat-icon>person</mat-icon><span>My Account</span>
+    </button>
+    <button mat-menu-item routerLink="#">
+      <mat-icon>settings</mat-icon><span>Settings</span>
+    </button>
+    <button mat-menu-item routerLink="#">
+      <mat-icon>help</mat-icon><span>Help</span>
+    </button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item routerLink="#">
+      <mat-icon>exit_to_app</mat-icon>Logout
+    </button>
+  </mat-menu>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav
+    #sidenav
+    class="mat-elevation-z1"
+    [mode]="sideNavMode"
+    [opened]="sideNavOpen"
+  >
+    <!--  Change div to img element for put logo or profile photo here -->
+    <div class="avatar">
+      <span>PHOTO HERE</span>
+    </div>
+    <h5 class="title subtitle text-center">Yoga Muttaqin</h5>
+    <mat-divider></mat-divider>
+    <mat-nav-list>
+      <mat-accordion multi="false">
+        <a
+          mat-button
+          class="menu-button"
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <span>Home</span>
+        </a>
+        <a
+          mat-button
+          class="menu-button"
+          routerLink="/category"
+          routerLinkActive="active"
+        >
+          <span>Category</span>
+        </a>
+        <mat-expansion-panel class="class.mat-elevation-z0 menu-button-tree mb">
+          <mat-expansion-panel-header class="heading-tree">
+            Book
+          </mat-expansion-panel-header>
+          <mat-nav-list>
+            <a
+              class="menu-button list-tree"
+              routerLink="/book/list"
+              routerLinkActive="active"
+            >
+              List Book
+            </a>
+            <a
+              class="menu-button list-tree"
+              routerLink="/book/create"
+              routerLinkActive="active"
+            >
+              Create Book
+            </a>
+          </mat-nav-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-nav-list>
+
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button">
+      <mat-icon>help</mat-icon>
+      <span>Help</span>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

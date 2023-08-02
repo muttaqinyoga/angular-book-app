@@ -1,0 +1,32 @@
+.flex-container{
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.bg-yellow{
+    background-color: rgb(206, 206, 40);
+}
+.bg-dark-blue{
+    background-color: #02275d;
+    color: #eaeaea;
+}
+.card{
+    margin: 8px;
+    max-width: 90%;
+}
+h1{
+    font-size: 5rem;
+    margin: .5rem;
+}
+.card h2{
+    font-size: 2rem;
+    margin: .5rem;
+    text-align: center;
+}
+.card h1{
+    font-size: 3rem;
+    margin: .5rem;
+    text-align: center;
+}

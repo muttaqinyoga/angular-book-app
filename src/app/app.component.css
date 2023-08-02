@@ -1,0 +1,116 @@
+mat-toolbar {
+    background: #02275d;
+    color: white;
+}
+
+
+mat-sidenav {
+    margin: 16px;
+    width: 230px;
+    border-right: none;
+    background: #002b5c;
+    color: white;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.content {
+    height: calc(100vh - 130px);
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 32px;
+    padding: 16px;
+    overflow: auto;
+}
+
+mat-sidenav-container {
+    height: calc(100vh - 65px);
+}
+
+.menu-button {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+    color: rgba(179, 179, 179, 0.87) !important;
+    text-decoration: none;
+}
+
+.menu-button:hover {
+    color: white !important;
+}
+
+.menu-button-tree {
+    width: 90%;
+    color: rgba(179, 179, 179, 0.87) !important;
+    background: none;
+}
+
+.menu-button-tree:hover {
+    color: white !important;
+}
+
+.heading-tree {
+    padding: 0 10px;
+    
+}
+
+.heading-tree:hover {
+    background: none !important;
+}
+
+.list-tree {
+    padding: 16px 10px;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 25%;
+    margin-left: 25%;
+    line-height: 100px;
+}
+
+.title {
+    font-weight: lighter;
+    font-size: 1.2rem;
+    margin: 12px 0 12px 0;
+}
+
+.subtitle {
+    font-size: 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.designation {
+    margin-top: 2px;
+    font-size: 0.7rem;
+    color: lightgrey;
+    text-align: center;
+}
+
+.toolbar-item-spacer {
+    flex: 1 1 auto;
+}
+
+.mb {
+    margin-bottom: .5rem;
+}
+
+mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.text-light {
+    color: rgba(179, 179, 179, 0.87) !important;
+}
+
+.active {
+    color: #fff !important;
+}

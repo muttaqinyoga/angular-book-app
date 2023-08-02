@@ -1,0 +1,30 @@
+.flex-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.title{
+    font-size: 2rem;
+    margin: .5rem;
+    text-align: center;
+    font-weight: 300;
+}
+.w-50 {
+    width: 43%;
+}
+
+.w-100 {
+    width: 96%;
+}
+
+.add-margin {
+    margin: .5rem;
+}
+
+@media screen and (max-width: 800px) {
+    .w-50 {
+        width: 96%;
+    }
+
+}

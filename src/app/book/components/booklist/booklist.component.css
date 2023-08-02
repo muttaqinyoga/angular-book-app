@@ -1,0 +1,26 @@
+.add-margin {
+    margin: .5rem;
+}
+
+.top-table {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.mat-mdc-form-field {
+    font-size: 14px;
+}
+
+.mat-mdc-table {
+    position: relative;
+    width: 100%;
+    max-height: 500px;
+    overflow: auto;
+}
+
+.mat-column-name {
+    height: 50px;
+}

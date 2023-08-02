@@ -1,0 +1,49 @@
+<h2 class="title">{{ title }}</h2>
+<form [formGroup]="formBook" (ngSubmit)="submitBookForm()">
+  <div class="flex-container add-margin">
+    <mat-form-field class="add-margin w-50">
+      <mat-label>Book Name</mat-label>
+      <input matInput required formControlName="name" />
+      <mat-error *ngIf="name.invalid && (name.dirty || name.touched)"
+        >Please provide book name</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field class="add-margin w-50">
+      <mat-label>Book Author</mat-label>
+      <input matInput required formControlName="author" />
+      <mat-error *ngIf="author.invalid && (author.dirty || author.touched)"
+        >Please provide book author</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field class="add-margin w-50">
+      <mat-label>Book Categories</mat-label>
+      <mat-select multiple required formControlName="categories">
+        <mat-option *ngFor="let c of categoryList" [value]="c">
+          {{ c.name }}
+        </mat-option>
+      </mat-select>
+      <mat-error
+        *ngIf="categories.invalid && (categories.dirty || categories.touched)"
+        >Please choose at least one category</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field class="add-margin w-50">
+      <mat-label>Book Publisher</mat-label>
+      <input matInput required formControlName="publisher" />
+      <mat-error
+        *ngIf="publisher.invalid && (publisher.dirty || publisher.touched)"
+        >Please provide book publisher</mat-error
+      >
+    </mat-form-field>
+  </div>
+  <div class="flex-container">
+    <button
+      mat-raised-button
+      color="primary"
+      class="add-margin w-50"
+      [disabled]="!formBook.valid"
+    >
+      Save
+    </button>
+  </div>
+</form>
