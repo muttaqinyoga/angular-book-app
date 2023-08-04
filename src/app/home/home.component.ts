@@ -15,7 +15,7 @@ export class HomeComponent {
   }
   constructor(private categoryService: CategoryService, bookService: BookService){
     this.total.category = categoryService.getCategoryList().length;
-    this.total.book = bookService.getBookList().length
+    this.total.book = bookService.getBookList().length;
   }
 
 }

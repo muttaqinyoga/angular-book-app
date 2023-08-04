@@ -4,27 +4,38 @@ import { HomeComponent } from './home/home.component';
 import { CategoryComponent } from './category/components/category/category.component';
 import { BooklistComponent } from './book/components/booklist/booklist.component';
 import { BookformComponent } from './book/components/bookform/bookform.component';
+import { AuthComponent } from './auth/auth.component';
+import { authGuard } from './services/auth/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [authGuard] 
   },
   {
     path: 'category',
-    component: CategoryComponent
+    component: CategoryComponent,
+    canActivate: [authGuard] 
   },
   {
     path: 'book/list',
-    component: BooklistComponent
+    component: BooklistComponent,
+    canActivate: [authGuard] 
   },
   {
     path: 'book/create',
-    component: BookformComponent
+    component: BookformComponent,
+    canActivate: [authGuard] 
   },
   {
     path: 'book/:id/edit',
-    component: BookformComponent 
+    component: BookformComponent,
+    canActivate: [authGuard]  
+  },
+  {
+    path: 'login',
+    component: AuthComponent
   },
   { path: '**', 
     redirectTo: '' 

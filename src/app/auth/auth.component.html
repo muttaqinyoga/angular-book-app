@@ -1,0 +1,46 @@
+<div class="flex-container">
+  <mat-card>
+    <div class="card-header">ANGULAR MINI BOOK APP</div>
+    <mat-card-content>
+      <button mat-button class="message" *ngIf="fail">
+        Invalid credentials
+      </button>
+      <mat-form-field appearance="outline">
+        <mat-label>User Name</mat-label>
+        <input
+          matInput
+          placeholder="Enter user name..."
+          ngModel
+          #username="ngModel"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          ngModel
+          #password="ngModel"
+          [type]="hide ? 'password' : 'text'"
+          placeholder="Enter password..."
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+      <button
+        mat-button
+        class="bg-yellow"
+        (click)="login(username.value, password.value)"
+        [disabled]="submited"
+      >
+        {{ submited ? "Logging in..." : "Log in" }}
+      </button>
+    </mat-card-content>
+  </mat-card>
+</div>
