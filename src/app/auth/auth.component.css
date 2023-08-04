@@ -1,0 +1,38 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+mat-card {
+    display: flex;
+    width: 50vh;
+    margin-top: 25vh;
+}
+mat-card-content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 16px;
+}
+.card-header{
+    background-color: #02275d;
+    color: #eaeaea;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 16px;
+}
+.bg-yellow {
+    background-color: #ffd740;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.message{
+    background-color: rgb(211, 42, 42);
+    font-size: 1rem;
+    font-weight: 200;
+    color: #eaeaea!important;
+    margin-bottom: 16px;
+    cursor: text!important;
+}

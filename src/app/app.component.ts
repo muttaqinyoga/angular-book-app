@@ -1,6 +1,8 @@
 import {  Component, OnInit } from '@angular/core';
 import {MatDrawerMode} from '@angular/material/sidenav';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { AuthService } from './services/auth/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,13 +16,13 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 })
 export class AppComponent  implements OnInit {
   
-  constructor(private observer: BreakpointObserver){}
+  constructor(private observer: BreakpointObserver, public authService: AuthService, private router: Router){}
 
   title = 'My App';
   sideNavMode: MatDrawerMode
   sideNavOpen: boolean;
-
   ngOnInit(): void {
+      
       this.observer.observe(["(max-width: 800px)"]).subscribe((res) => {
         if (res.matches) {
           this.sideNavMode = "over";
@@ -30,6 +32,11 @@ export class AppComponent  implements OnInit {
           this.sideNavOpen = true;
         }
       });
+  }
+
+  logout(){
+    this.authService.logout();
+    this.router.navigate(['/login']);
   }
 
 }
